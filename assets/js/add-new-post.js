@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elements
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const sidebar = document.getElementById('sidebar');
-    const mainContent = document.getElementById('main-content');
-    const sidebarBackdrop = document.getElementById('sidebar-backdrop');
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const html = document.documentElement;
     
     // Form elements
     const quoteText = document.getElementById('quoteText');
@@ -55,47 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       setTheme(newTheme);
     });
-    
-    // Function to check window width and set initial state
-    function checkWidth() {
-      if (window.innerWidth < 992) {
-        sidebar.classList.remove('collapsed');
-        mainContent.classList.remove('expanded');
-      }
-    }
+  
     
     // Initial check
     checkWidth();
     
-    // Toggle sidebar on button click
-    sidebarToggle.addEventListener('click', function() {
-      if (window.innerWidth < 992) {
-        sidebar.classList.toggle('show');
-        sidebarBackdrop.classList.toggle('show');
-      } else {
-        sidebar.classList.toggle('collapsed');
-        mainContent.classList.toggle('expanded');
-      }
-    });
     
-    // Close sidebar when clicking on backdrop
-    sidebarBackdrop.addEventListener('click', function() {
-      sidebar.classList.remove('show');
-      sidebarBackdrop.classList.remove('show');
-    });
     
-    // Handle window resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth < 992) {
-        sidebar.classList.remove('collapsed');
-        mainContent.classList.remove('expanded');
-        
-        if (sidebar.classList.contains('show') && window.innerWidth >= 992) {
-          sidebar.classList.remove('show');
-          sidebarBackdrop.classList.remove('show');
-        }
-      }
-    });
     
     // Live preview functionality
     function updatePreview() {
