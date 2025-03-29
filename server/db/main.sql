@@ -8,7 +8,7 @@ CREATE TABLE users (
 );
 
 
--- Quote table
+-- Quote Category table
 CREATE TABLE category (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(191) NOT NULL UNIQUE,
